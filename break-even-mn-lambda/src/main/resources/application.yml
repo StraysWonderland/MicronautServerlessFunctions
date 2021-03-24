@@ -1,0 +1,3 @@
+micronaut:
+  application:
+    name: break-even-mn-lambda

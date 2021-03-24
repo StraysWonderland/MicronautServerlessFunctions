@@ -1,0 +1,3 @@
+#!/bin/sh
+set -euo pipefail
+./break-even-mn-lambda -Xmx128m -Djava.library.path=$(pwd)
