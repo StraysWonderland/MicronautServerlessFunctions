@@ -1,33 +1,27 @@
 package info.novatec;
 
+import com.microsoft.azure.functions.ExecutionContext
 import com.microsoft.azure.functions.HttpMethod
+import com.microsoft.azure.functions.HttpRequestMessage
+import com.microsoft.azure.functions.HttpResponseMessage
 import com.microsoft.azure.functions.annotation.AuthorizationLevel
 import com.microsoft.azure.functions.annotation.FunctionName
 import com.microsoft.azure.functions.annotation.HttpTrigger
-import io.micronaut.azure.function.AzureFunction
-import kotlin.math.ceil
+import io.micronaut.azure.function.http.AzureHttpFunction
+import java.util.*
 
 /**
  * Azure Functions with HTTP Trigger.
  */
-class Function : AzureFunction() {
-    @FunctionName("breakeven")
-    fun breakeven(
-            @HttpTrigger(
-                    name = "name",
-                    methods = [HttpMethod.POST],
+class MyHttpFunction : AzureHttpFunction() {
+    @FunctionName("ExampleTrigger")
+    fun invoke(
+            @HttpTrigger(name = "req",
+                    methods = [HttpMethod.GET, HttpMethod.POST],
+                    route = "{*route}",
                     authLevel = AuthorizationLevel.ANONYMOUS)
-            price: Double, unitCosts: Double, fixedCosts: Double): Int {
-        return ceil(fixedCosts / (price - unitCosts)).toInt()
-    }
-
-    @FunctionName("hello")
-    fun hello(
-            @HttpTrigger(
-                    name = "name",
-                    methods = [HttpMethod.GET],
-                    authLevel = AuthorizationLevel.ANONYMOUS)
-            name: String): String {
-        return "Hello $name"
+            request: HttpRequestMessage<Optional<String>>,
+            context: ExecutionContext): HttpResponseMessage {
+        return super.route(request, context)
     }
 }
