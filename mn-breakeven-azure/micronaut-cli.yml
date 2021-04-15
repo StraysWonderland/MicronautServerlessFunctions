@@ -1,0 +1,6 @@
+applicationType: function
+defaultPackage: info.novatec
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: maven
+features: [app-name, azure-function, junit, kotlin, logback, maven, readme, yaml]
