@@ -1,6 +1,0 @@
-applicationType: function
-defaultPackage: info.novatec
-testFramework: junit
-sourceLanguage: kotlin
-buildTool: gradle
-features: [annotation-api, app-name, azure-function, graalvm, gradle, junit, kotlin, logback, readme, yaml]
