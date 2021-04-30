@@ -8,7 +8,7 @@ import java.util.*
  * Azure Functions with HTTP Trigger.
  */
 class MyHttpFunction : AzureHttpFunction() {
-    @FunctionName("ExampleTrigger")
+    @FunctionName("BreakEvenTrigger")
     fun invoke(
             @HttpTrigger(name = "req",
                     methods = [HttpMethod.GET, HttpMethod.POST],
