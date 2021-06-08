@@ -14,6 +14,7 @@ import java.util.*
  * Azure Functions with HTTP Trigger.
  */
 class MyHttpFunction : AzureHttpFunction() {
+
     @FunctionName("BreakEvenTrigger")
     fun invoke(
             @HttpTrigger(name = "req",
@@ -21,7 +22,7 @@ class MyHttpFunction : AzureHttpFunction() {
                     route = "{*route}",
                     authLevel = AuthorizationLevel.ANONYMOUS)
             request: HttpRequestMessage<Optional<String>>,
-            context: ExecutionContext): HttpResponseMessage {
+            context: ExecutionContext?): HttpResponseMessage {
         return super.route(request, context)
     }
 }
