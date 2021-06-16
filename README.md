@@ -21,6 +21,8 @@ Generate a jar file by running the corresponding gradle/maven task
 
 Upload the jar or zip file to aws lambda manually or define a terraform script
 
+---
+
 ## Azure Project
 
 The micronaut azure package allows to run the code locally for testing, package into zip file, or deploy directly to azure
