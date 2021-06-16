@@ -27,7 +27,6 @@ The micronaut azure package allows to run the code locally for testing, package 
 
 ### Packages
 - micronaut-azure
-- graalvm
 
 ### Development and Deployment
 
